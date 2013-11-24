@@ -13,7 +13,7 @@ def datestring2datetime(datestring):
   return tweet_time
 
 
-out_file = open('parsed/history.csv','wb')
+out_file = open('parsed/history.csv','w')
 for file_name in os.listdir(FOLDER_NAME):
     with open(FOLDER_NAME + '/' + file_name,'rb') as in_file:
         for line in in_file:
