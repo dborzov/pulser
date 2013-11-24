@@ -23,9 +23,9 @@ start_time = time.time(); exec_time = 0.
 counter = 2
 total_tweets = 0
 id_cursor = False
-while counter>1 and exec_time < 300. and not id_cursor=='not a tweet json':
+while counter > 1 and exec_time < 300.:
     exec_time = time.time()-start_time
-    time.sleep(1.)
+    time.sleep(1.)  # some courtesy pause before quiring an api
     if not id_cursor:
         r = api.request('search/tweets', {'q':'rubikloud','count':COUNT_PARAMETER})
     else:
@@ -35,7 +35,7 @@ while counter>1 and exec_time < 300. and not id_cursor=='not a tweet json':
     for item in r.get_iterator():
         output.write(simplejson.dumps(item)+'\n')
         counter +=1
-        id_cursor = item.get('id','not a tweet json')
+        id_cursor = item['id']
     total_tweets += counter
 
 print 'Totally: %d' % total_tweets
