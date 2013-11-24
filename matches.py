@@ -7,7 +7,7 @@ import simplejson
 import TwitterAPI
 from access_keys import *
 
-UNTIL_PARAMETER = '2013-11-10'
+UNTIL_PARAMETER = '2013-11-20'
 COUNT_PARAMETER = '100'
 
 TWITTER_URL = 'https://api.twitter.com/1.1/search/tweets.json'

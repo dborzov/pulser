@@ -1,8 +1,9 @@
 import simplejson
 import re
 import datetime
-import pickle
+import os
 
+FOLDER_NAME = 'output'
 def datestring2datetime(datestring):
   "Translater Twitter datastamp string into datatime.datetime-type object"
   Month2MON = {'Jan':1,'Feb':2,'Mar':3,'Apr':4, 'May':5, 'Jun':6,'Jul':7,'Aug':8,'Sep':9,'Oct':10,'Nov':11, 'Dec':12}
@@ -13,10 +14,10 @@ def datestring2datetime(datestring):
 
 
 out_file = open('parsed/history.csv','wb')
-with open('output/2013-11-19.jsons','rb') as in_file:
-    for line in in_file:
-        tweet_dict = simplejson.loads(line)
-        tweet_time = datestring2datetime(tweet_dict['created_at'])
-        in_file.write('%d:%d:%d \n' % (tweet_time.hour, tweet_time.minute, tweet_time.second))
+for file_name in os.listdir(FOLDER_NAME):
+    with open(FOLDER_NAME + '/' + file_name,'rb') as in_file:
+        for line in in_file:
+            tweet_dict = simplejson.loads(line)
+            tweet_time = datestring2datetime(tweet_dict['created_at'])
+            out_file.write('%d:%d:%d \n' % (tweet_time.hour, tweet_time.minute, tweet_time.second))
 
-# hour+u',"' + tweet_dict['text'].encode('utf8') +u'"'
