@@ -1,7 +1,7 @@
 import matplotlib.pyplot as pyplot
 import re
 
-BINS_NUMBER = 30
+BINS_NUMBER = 50
 
 
 with open('parsed/history.csv','rb') as tweet_file:
