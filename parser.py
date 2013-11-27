@@ -16,7 +16,7 @@ def datestring2datetime(datestring):
 
 reference_time = datetime.datetime.now()
 tweet_counter = 0
-time_lower_bound = 0
+time_lower_bound, time_upper_bound = 0, 0
 
 out_file = open('parsed/history.csv','wb')
 for file_name in os.listdir(FOLDER_NAME):
@@ -27,12 +27,14 @@ for file_name in os.listdir(FOLDER_NAME):
             time_diff = reference_time - tweet_time
             if time_diff.total_seconds() > time_lower_bound:
                 time_lower_bound = time_diff.total_seconds()
+            if time_diff.total_seconds() < time_upper_bound or time_upper_bound==0:
+                time_upper_bound = time_diff.total_seconds()
             out_file.write('%d, %s \n' % (time_diff.total_seconds(),tweet_dict['text'].encode('utf-8').replace('\n',' ')))
             tweet_counter += 1
 
 with open('parsed/summary.log','wb') as log_file:
     log_file.write(" Total number of matching tweets: %d \n" % tweet_counter)
-    log_file.write(" Time range lower bound (oldest tweet timestamp in seconds from now): %d \n" % time_lower_bound)
+    log_file.write(" Time range lower bound (oldest tweet timestamp in seconds from now): %d to %d \n" % (time_upper_bound, time_lower_bound))
 
 
 
