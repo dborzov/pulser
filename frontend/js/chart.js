@@ -9,8 +9,7 @@
 
         // Data Format:
         data = [
-          [x, y1], // First Series
-          [x, y2]  // Second Series
+          [x_data, y_data]  // Second Series
         ];
 
         // Sample the sine function for data
