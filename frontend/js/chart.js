@@ -9,7 +9,7 @@
 
         // Data Format:
         data = [
-          [x_data, y_data]  // Second Series
+          [x_data[1], y_data[1]]  // Second Series
         ];
 
         // Sample the sine function for data
@@ -37,4 +37,40 @@
         new envision.templates.TimeSeries(options);
 
       })();
+
+
+    (function finance_demo (container) {
+
+    options = {
+    container : container,
+    data : {
+      price : y_data,
+      volume : y_data,
+      summary : y_data
+    },
+    trackFormatter : function (o) {
+    var
+        data = o.series.data,
+        index = data[o.index][0],
+        value;
+    value = actually_data[index] + ' tweets';
+      return value;
+    },
+    xTickFormatter : function (index) {
+      return data_labels[index];
+    },
+    // An initial selection
+    selection : {
+      data : {
+        x : {
+          max : 25,
+          min : 35
+        }
+      }
+    }
+  };
+
+  return new envision.templates.Finance(options);
+}
+)(document.getElementById("editor-render-0"));
 

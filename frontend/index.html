@@ -26,47 +26,50 @@
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="http://www.rubikloud.com">Rubikloud</a></li>
+          <li><a href="http://www.borzov.ca">Author</a></li>
         </ul>
-        <h3 class="text-muted">Project name</h3>
+        <h3 class="text-muted">Rubikloud Twitter mentions</h3>
       </div>
 
       <div class="jumbotron">
-        <h1>Jumbotron heading</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+        <h1>Rubikloud on Twitter</h1>
+        <p class="lead">See how often Rubikloud is mentioned on Twitter and how the frequency of these tweets changes with time.</p>
+        <p><a class="btn btn-lg btn-success" href="https://github.com/dborzov/pulser" role="button">See the code</a></p>
+      </div>
+    <div class="jumbotron">
+        <div id="editor-render-0">
       </div>
 
-      <div id="container2">
       </div>
+
+
 
       <div class="row marketing">
         <div class="col-lg-6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+          <h4>Continuous</h4>
+          <p>Histogram with twitter mentions in the period of time is plotted. Then the twit 'decay time' is added for each tweet so that each tweet contributes maximum of intensity at the time period of appearance and the background 'buzz' time for a couple hours after.</p>
 
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+          <h4>Drag to zoom</h4>
+          <p>Click on the lowest plot to select the time range of interest. This demonstation uses <a href="http://www.humblesoftware.com/envision">envision.js</a>, which makes the figures interactive.</p>
         </div>
 
         <div class="col-lg-6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+          <h4>Most retweeted tweet</h4>
+          <p>Below one can see the time series for the retweeiting of the most popular tweet: the one with the Techcrunch link.</p>
 
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
 
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+          <h4>Twitter API</h4>
+          <p>Twitter API was used to retrieve the relevant tweets.</p>
+
         </div>
       </div>
 
+
+      <div id="container2"></div>
+
       <div class="footer">
-        <p>&copy; Company 2013</p>
+        <p>&copy; Peter Borzov 2013 (see <a href="https://github.com/dborzov/pulser"> github repositiory</a> for details) </p>
       </div>
 
     </div> <!-- /container -->
@@ -75,7 +78,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="js/envision.min.js"></script>
+    <script type="text/javascript" src="js/envision.js"></script>
     <script type="text/javascript" src="js/data.js"></script>
     <script type="text/javascript" src="js/chart.js"></script>
   </body>

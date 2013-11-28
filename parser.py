@@ -29,12 +29,12 @@ for file_name in os.listdir(FOLDER_NAME):
                 time_lower_bound = time_diff.total_seconds()
             if time_diff.total_seconds() < time_upper_bound or time_upper_bound==0:
                 time_upper_bound = time_diff.total_seconds()
-            out_file.write('%d, %s \n' % (time_diff.total_seconds(),tweet_dict['text'].encode('utf-8').replace('\n',' ')))
+            out_file.write('%d, "%s" , "%s" \n' % (time_diff.total_seconds(),tweet_dict['created_at'].encode('utf-8'), tweet_dict['text'].encode('utf-8').replace('\n',' ')))
             tweet_counter += 1
 
-with open('parsed/summary.log','wb') as log_file:
-    log_file.write(" Total number of matching tweets: %d \n" % tweet_counter)
-    log_file.write(" Time range lower bound (oldest tweet timestamp in seconds from now): %d to %d \n" % (time_upper_bound, time_lower_bound))
+with open('consts.py','wb') as log_file:
+    log_file.write("TOTAL_NUMBER_OF_TWEETS = %d \n" % tweet_counter)
+    log_file.write("LOWER_BOUND, UPPER_BOUND = %d , %d \n" % (time_upper_bound, time_lower_bound))
 
 
 
