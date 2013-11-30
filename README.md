@@ -1,0 +1,3 @@
+[http://en.wikipedia.org/wiki/Seasonal_affective_disorder](http://en.wikipedia.org/wiki/Seasonal_affective_disorder) is a fancy scientific term for the winter blues when the lack of sunshine causes depressive mood or at least supposed to.
+
+Here I decided to find out if it is possible to see that people are indeed getting tired and depressed more easily in the winter with Twitter sentiment analysis.
